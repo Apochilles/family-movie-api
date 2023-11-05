@@ -35,7 +35,7 @@ Route::prefix('ratings')->group(function (): void {
 
 Route::prefix('recommendations')->group(function (): void {
     Route::get('/', [RecommendationsController::class, 'index']);
-    
+
 });
 
 Route::prefix('thoughts')->group(function (): void {

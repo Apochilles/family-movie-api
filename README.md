@@ -1,4 +1,4 @@
-// Movie Api
+Movie Api
 
 - Multiple logins
 - Draw movie data from api eg: imdb
@@ -9,11 +9,11 @@
 
 Tables: 
 
-users have many movies
-movies have many watched movies
-movies have many ratings
-movies have many recommendations
-movies have many thoughts 
+- users have many movies
+- movies have many watched movies
+- movies have many ratings
+- movies have many recommendations
+- movies have many thoughts 
 
 
 
