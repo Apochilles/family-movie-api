@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ratings', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('movie_id');
+            $table->string('description');
             $table->enum('type', ['bad', 'meh', 'good'.'amazing', 'top tier']);
             $table->timestamps();
         });

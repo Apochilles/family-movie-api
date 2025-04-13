@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\RatingsController;
+use App\Http\Controllers\RecommendationsController;
+use App\Http\Controllers\ThoughtsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,12 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 });
 
-Route::prefix('movies')->group(function (): void {
-    Route::get('/', [MovieController::class, 'index']);
-
-});
-Route::prefix('watched_movies')->group(function (): void {
-    Route::get('/', [WatchedMoviesController::class, 'index']);
+Route::prefix('reviews')->group(function (): void {
+    Route::get('/reviews', [ReviewsController::class, 'index']);
 
 });
 
