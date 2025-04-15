@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user_roles', function (Blueprint $table): void {
             $table->id();
-                 $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->foreignId('role_id');v
-            $table->rememberToken();
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table
+                ->enum('hrm_type', ['ADMIN', 'USER'])
+                ->default('NONE');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user_roles');
     }
 };
